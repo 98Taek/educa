@@ -176,3 +176,4 @@ cython_debug/
 cert.crt
 cert.key
 /static/
+fixtures
