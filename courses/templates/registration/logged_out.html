@@ -7,13 +7,6 @@
     <div class="module">
         <p>
             You have been successfully logged out.
-        </p>
-        <form action="{% url 'logout' %}" method="post">
-            {{ form.as_p }}
-            <p><input type="submit" value="Log-out"></p>
-            {% csrf_token %}
-        </form>
-        <p>
             You can <a href="{% url 'login' %}">log-in again.</a>
         </p>
     </div>
