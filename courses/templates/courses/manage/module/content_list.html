@@ -76,7 +76,7 @@
 {% endblock include_js %}
 <script>
     {% block domready %}
-        var options = {
+        const options = {
             method: 'POST',
             mode: 'same-origin'
         };
@@ -86,7 +86,7 @@
            placeholderClass: 'placeholder'
         })[0].addEventListener('sortupdate', function(e) {
            modulesOrder = {};
-           var modules = document.querySelectorAll('#modules li');
+           const modules = document.querySelectorAll('#modules li');
            modules.forEach(function (module, index) {
               modulesOrder[module.dataset.id] = index;
               module.querySelector('.order').innerHTML = index + 1;
@@ -99,8 +99,8 @@
            forcePlaceholderSize: true,
            placeholderClass: 'placeholder'
         })[0].addEventListener('sortupdate', function (e) {
-           contentOrder = {};
-           var contents = document.querySelectorAll('#module-contents div');
+           const contentOrder = {};
+           const contents = document.querySelectorAll('#module-contents div');
            contents.forEach(function (content, index) {
               contentOrder[content.dataset.id] = index;
               options['body'] = JSON.stringify(contentOrder);
