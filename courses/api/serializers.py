@@ -34,3 +34,19 @@ class ContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
         fields = ['order', 'item']
+
+
+class ModuleWithContentSerializer(serializers.ModelSerializer):
+    contents = ContentSerializer(many=True)
+
+    class Meta:
+        model = Module
+        fields = ['order', 'title', 'description' , 'contents']
+
+
+class CourseWithContentSerializer(serializers.ModelSerializer):
+    modules = ModuleWithContentSerializer(many=True)
+
+    class Meta:
+        model = Course
+        fields = ['id', 'subject', 'title', 'slug', 'overview', 'created', 'owner', 'modules']
