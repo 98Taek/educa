@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'chat.apps.ChatConfig',
     'students.apps.StudentsConfig',
     'courses.apps.CoursesConfig',
     'django.contrib.admin',
