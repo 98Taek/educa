@@ -145,6 +145,13 @@ CACHES = {
     }
 }
 
+CHANNEL_LAYERS = {
+    'default': 'channels_redis.core.RedisChannelLayer',
+    'CONFIG': {
+        'hosts': [('127.0.0.1', 6379)],
+    }
+}
+
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
